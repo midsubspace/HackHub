@@ -1,3 +1,6 @@
+const build_date :string =`2026-08-05`
+const RFID :string = `GL9137EP0001063384581668864`
+
 const mon: string = `wlan0`
 const isInstalled = await installLib("hashcat");
 println(`Hash Cat: ${isInstalled}`);
@@ -17,6 +20,7 @@ for ( let network of networks){
         await FileSystem.WriteFile(`wifi.txt`,`placeholder`)
         let content = await FileSystem.ReadFile(`wifi.txt`)
         await FileSystem.WriteFile(`wifi.txt`,`${content} \n ${target.ssid}:${password}`)
+        await Networking.Wifi.Connect(`${target.ssid}`,`${password}`)
     }
    }
 };
