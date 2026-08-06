@@ -15,3 +15,12 @@ println(`clearlogs: ${isInstalled}`);
 
 isInstalled = await installLib("git");
 println(`git: ${isInstalled}`);
+
+isInstalled = await installLib("probe");
+println(`probe: ${isInstalled}`);
+
+isInstalled = await installLib("bettercap");
+println(`bettercap: ${isInstalled}`);
+
+isInstalled = await installLib("john");
+println(`john: ${isInstalled}`);
