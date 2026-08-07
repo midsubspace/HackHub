@@ -1,3 +1,4 @@
+Shell.lock()
 let args :string = Shell.GetArgs();
 let target: string|null = null;
 if (args.length == 0){
@@ -15,4 +16,5 @@ if (!Networking.IsIp(args[0])){
     target=args[0];
 }
 await Shell.Process.exec(`ping ${target}`,{silent:true})
-await Shell.Process.exec(`nmap ${target}`)
+await Shell.Process.exec(`nmap ${target} -sv`)
+Shell.unlock()
